@@ -23,14 +23,20 @@ function worldGen(){
 			bmap[20, 13] = noone; bmap[21, 13] = noone; bmap[20, 12] = noone; bmap[20, 14] = noone;
 			bmap[pc.xSpot, pc.ySpot] = noone;
 			
-		} else if (z % 2 == 0) {
+		//} else if (z == 1) {
+			
+			//worldGenRoomsSmart();
+			
+			
+		//} else if (z % 2 == 0) {
+		} else if (z > 0) {
 			
 			worldGenRooms();
 			worldGenStairByZ(z);
 			
-			for(var a=0; a<43; a++){ for(var b=0; b<25; b++){
-				if(z > 0 && bmap[a, b] == noone && irandom_range(1, 12) == 1){ mmap[a, b] = objMob; }
-			}}
+			
+			
+		
 			
 		} else {
 		
@@ -56,6 +62,12 @@ function worldGen(){
 			}}
 		}
 		
+		if(z > 0){
+			for(var a=0; a<43; a++){ for(var b=0; b<25; b++){
+				if(fmap[a, b] == imgFloorStairUp || fmap[a, b] == imgFloorStairDown){ continue; }
+				if(z > 0 && bmap[a, b] == noone && irandom_range(1, 12) == 1){ mmap[a, b] = objMob; }
+			}}
+		}
 		
 		
 		for(var a=0; a<43; a++){ for(var b=0; b<25; b++){

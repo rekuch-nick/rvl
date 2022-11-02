@@ -18,7 +18,7 @@ function getLine(x1, y1, x2, y2){
 		if(x1 == x2 && y1 == y2){ break; }
 		
 		var e2 = err * 2;
-		if(e2 > -dx) { /// -dy???
+		if(e2 > -dy) { /// -dy??? -dx
 			err -= dy;
 			x1 += sx;
 		}
